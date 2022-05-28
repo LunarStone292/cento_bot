@@ -16,3 +16,8 @@ Install
 How to use
 =
  - python3 cento.py
+
+Language
+=
+
+ - italiano
