@@ -1,0 +1,4 @@
+nmap
+playsound==1.2.2
+gTTS
+telepot
