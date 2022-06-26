@@ -1,16 +1,11 @@
 import os
 import platform
 import getpass
-
-if(platform.system() == "Linux"):
-            print("\n this bot is not supported for linux \n\n")
-            exit
-
 f = open("txt/log.txt","r") 
 while True:
     line = f.readline() 
     if(line == ""):
-        os.system("cls")
+        os.system("cls||clear")
         print("              _")
         print("__      _____| | ___ ___  _ __ ___   ___ ")
         print("\ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ ")
