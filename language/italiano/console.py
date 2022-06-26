@@ -1,5 +1,6 @@
 from __future__ import annotations
 import os
+from platform import platform
 import time
 from turtle import speed
 import ctypes
@@ -237,10 +238,16 @@ if(console == hack4noob):
 
 #del log
 if(console == del_log):
-    os.system("del txt/log.txt")
-    os.system("del txt/spotify.txt")
-    os.system("type nul > txt/log.txt")
-    os.system("type nul > txt/spotify.txt")
+    if(platform.system() == "Windows"):
+        os.system("del txt/log.txt")
+        os.system("del txt/spotify.txt")
+        os.system("type nul > txt/log.txt")
+        os.system("type nul > txt/spotify.txt")
+    else:
+        os.system("rm -r txt/log.txt")
+        os.system("rm -r txt/spotify.txt")
+        os.system("echo > txt/log.txt")
+        os.sysytem("echo > txt/spotify.txt")
     print("riavviando bot...")
     time.sleep(1)
     print("riavviando bot..")
