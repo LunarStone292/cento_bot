@@ -1,3 +1,4 @@
+from platform import platform
 import webbrowser
 import os
 
@@ -21,21 +22,39 @@ print('''\n questi sono i social:
 social = input("\n inserisci il nome del social: ")
 
 if(social == "instagram"):
-    webbrowser.open(instagram + account)
+    if(platform.system() == "Windows"):
+        webbrowser.open(instagram + account)
+    else:
+        os.system("firefox " + instagram + account)
 
 if(social == "facebook"):
-    webbrowser.open(facebook + account)
+    if(platform.system() == "Windows"):
+        webbrowser.open(facebook + account)
+    else:
+        os.system("firefox " + facebook + account)
 
 if(social == "tiktok"):
-    webbrowser.open(tiktok + account)
+    if(platform.system() == "Windows"):
+        webbrowser.open(tiktok + account)
+    else:
+        os.system("firefox " + tiktok + account)
 
 if(social == "twitch"):
-    webbrowser.open(twitch + account)
+    if(platform.system() == "Windows"):
+        webbrowser.open(twitch + account)
+    else:
+        os.system("firefox " + twitch + account)
 
 if(social == "github"):
-    webbrowser.open(github + account)
+    if(platform.system() == "Windows"):
+        webbrowser.open(github + account)
+    else:
+        os.system("firefox " + github + account)
 
 if(social == "youtube"):
-    webbrowser.open(youtube + account)
+    if(platform.system() == "Windows"):
+        webbrowser.open(youtube + account)
+    else:
+        os.system("firefox " + youtube + account)
 
 os.system("python3 language/italiano/console.py")
