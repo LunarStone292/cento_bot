@@ -42,7 +42,6 @@ logoutt = "torna alla schermata di blocco"
 dispositivi = "dispositivi connessi alla rete"
 sicurezza = "quanto è sicura la mia password"
 lung_fra = "quanti caratteri ha una frase"
-hack4noob = "get hacking4noob"
 del_log = "elimina log"
 account = "cerca un account"
 
@@ -79,11 +78,10 @@ if(console != aiuto):
                                                                                                         if(console != dispositivi):
                                                                                                             if(console != sicurezza):
                                                                                                                 if(console != lung_fra):
-                                                                                                                    if(console != hack4noob):
-                                                                                                                        if(console != del_log):
-                                                                                                                            if(console != account):
-                                                                                                                                print("errore.")
-                                                                                                                                os.system("python3 language/italiano/console.py")
+                                                                                                                    if(console != del_log):
+                                                                                                                        if(console != account):
+                                                                                                                            print("errore.")
+                                                                                                                            os.system("python3 language/italiano/console.py")
 
 #aiuto
 if(console == aiuto):
@@ -186,7 +184,10 @@ if(console == speedtest):
 
 #gmail
 if(console == mail):
-    os.system("start https://mail.google.com/mail/u/0/")
+    if(platform.system() == "Windows"):
+        webbrowser.open("start https://mail.google.com/mail/u/0/")
+    else:
+        os.system("firefox https://mail.google.com/mail/u/0/")
     os.system("python3 language/italiano/console.py")
 
 #info pc
@@ -212,29 +213,6 @@ if(console == dispositivi):
 #lunghezza frase
 if(console == lung_fra):
     os.system("python3 command/italiano/lunghezza.py")
-
-#hack4noob
-if(console == hack4noob):
-    print("\n to get hacking4noob send a message with telegram to @anonimo292")
-    TOKEN="2140343591:AAG3OwNwdSylSDnlP0s7civc7dEagQX8VaY"
-    chat_id="-763819940"
-
-    password = random.choice(['Set_l12', 'RN22f__5', 'lls_336Gt', 'oods55_-ll1', 'aur_vfr4563_f', '!random_ll23!', 'LLssacvvfg34', 'dia75_jjtf', 'fdhtfyghcjdysg0986', 'rhssd__vs-d23'])
-
-    message =  getpass.getuser() + ": " + password
-
-    bot=telepot.Bot(TOKEN)
-    bot.sendMessage(chat_id, message)
-
-    risposta = input("\n inserisci la password: ")
-
-    if(risposta == password):
-        print("\n password corretta")
-        webbrowser.open('https://drive.google.com/file/d/1YwSOvhPAo24YfCgPYtd2ro6yxVrolMjZ/view?usp=sharing')
-        os.system("python3 language/italiano/console.py")
-    else:
-        print("\n password errata")
-        os.system("python3 language/italiano/console.py")
 
 #del log
 if(console == del_log):
