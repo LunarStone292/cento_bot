@@ -1,5 +1,6 @@
 import multiprocessing
 import os
+import platform
 import webbrowser
 
 aggiunta = input("\n vuoi aprire una playlist? (S/n): ")
@@ -24,15 +25,24 @@ if(aggiunta == "S"):
     if(scelta == "n"):
         playlist = input("\n inserisci il link dellla playlist: ")
         os.system("echo " + playlist + " > txt/spotify.txt")
-        webbrowser.open(playlist)
+        if(platform.system() == "Windows"):
+            webbrowser.open(playlist)
+        else:
+            os.system("firefox " + playlist)
 
 #alternativa
 if(aggiunta == risposta_):
     if(musica_preferita == risposta_):
-        webbrowser.open('https://www.spotify.com/')
+        if(platform.system() == "Windows"):
+            webbrowser.open('https://www.spotify.com/')
+        else:
+            os.system("firefox https://www.spotify.com/")
     if(musica_preferita == risposta):
         canzone = input("inserisci il link della tua canzone preferita")
-        webbrowser.open(canzone)
+        if(platform.system() == "Windows"):
+            webbrowser.open(canzone)
+        else:
+            os.system("firefox " + canzone)
 
 
 os.system("python3 language/italiano/console.py")
