@@ -29,5 +29,8 @@ print("| __| | '_ ` _ \ / _ \  / _ \| | | | __|")
 print("| |_| | | | | | |  __/ | (_) | |_| | |_")
 print(" \__|_|_| |_| |_|\___|  \___/ \__,_|\__|")
 
-os.system("cd mp3 & Time-Up.mp3")
+if(platform.system() == "Windows"):
+    os.system("cd mp3 & Time-Up.mp3")
+else:
+    os.system("cd mp3 && xdg-open Time-Up.mp3 && cd ..")
 os.system("python3 language/italiano/console.py")
