@@ -1,4 +1,5 @@
 import os
+from platform import platform
 import webbrowser
 
 sito = input("\n inserisci il link: ")
@@ -6,7 +7,10 @@ sito = input("\n inserisci il link: ")
 sito_false = ""
 
 if(sito != sito_false):
-    webbrowser.open(sito)
+    if(platform.system() == "Windows"):
+        webbrowser.open(sito)
+    else:
+        os.system("firefox " + sito)
 
 else:
     print("\n comando invalido")
